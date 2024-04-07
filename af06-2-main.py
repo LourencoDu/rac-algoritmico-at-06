@@ -69,16 +69,37 @@ def ex08():
 
 def ex09():
   print("Exercício 09")
-  for numero in range(100):
-    qtdDivisivel = 1
-    for numero2 in range(numero):
-      if(numero2 % numero == 0):
+  for numero in range(1, 101):
+    qtdDivisivel = 0
+    for numero2 in range(1, numero + 1):
+      if(numero % numero2 == 0):
         qtdDivisivel += 1
+
+      if(qtdDivisivel > 2):
+        break
+
+    if(qtdDivisivel == 2):
+      print(numero)
       
 
 
 def ex10():
   print("Exercício 10")
+  while True:
+    entrada = input("Entre com o número que deseja verificar se é impar ou par, ou digite 'sair' para sair: ")
+    if(entrada == "sair"):
+      print("Até mais!")
+      break
+    elif(not entrada.isnumeric()):
+      print("Entrada inválida!")
+    else:
+      numero = int(entrada)
+      if(numero % 2 == 0):
+        print(f"O número '{numero}' é par")
+      else:
+        print(f"O número '{numero}' é impar")
+  
+
 
 def start():
   print("--- Atividade Formativa ---")
